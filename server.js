@@ -5,6 +5,7 @@ const cors = require("cors");
 
 const userController = require("./controllers/UserController");
 const foodTypeController = require("./controllers/FoodTypeController");
+const foodSizeController = require("./controllers/FoodSizeController")
 
 app.use(cors());
 
@@ -20,3 +21,5 @@ app.post("/api/foodType/create", (req, res) => foodTypeController.create(req, re
 app.get("/api/foodType/list", (req, res) => foodTypeController.list(req, res));
 app.delete("/api/foodType/remove/:id", (req, res) => foodTypeController.delete(req, res));
 app.put("/api/foodType/update", (req, res) => foodTypeController.update(req, res));
+app.post("/api/foodSize/create", (req, res) => foodSizeController.create(req, res));
+app.get("/api/foodSize/list", (req, res) => foodSizeController.list(req, res));
