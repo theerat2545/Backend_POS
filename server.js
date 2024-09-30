@@ -23,3 +23,4 @@ app.delete("/api/foodType/remove/:id", (req, res) => foodTypeController.delete(r
 app.put("/api/foodType/update", (req, res) => foodTypeController.update(req, res));
 app.post("/api/foodSize/create", (req, res) => foodSizeController.create(req, res));
 app.get("/api/foodSize/list", (req, res) => foodSizeController.list(req, res));
+app.delete("/api/foodSize/remove/:id", (req, res) => foodSizeController.remove(req, res));
