@@ -18,4 +18,22 @@ module.exports = {
             return res.status(500).send({ error: e.message });
         }
     },
+    list: async (req, res) => {
+        try {
+            const rows = await prisma.taste.findMany({
+                include: {
+                    FoodType: true,
+                },
+                orderBy: {
+                    id: "desc",
+                },
+                where: {
+                    status: "use",
+                },
+            });
+            return res.send({ results: rows });
+        } catch (e) {
+            return res.status(500).send({ error: e.message });
+        }
+    }
 };

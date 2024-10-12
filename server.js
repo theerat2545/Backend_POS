@@ -30,3 +30,4 @@ app.delete("/api/foodSize/remove/:id", (req, res) => foodSizeController.remove(r
 app.put("/api/foodSize/update", (req, res) => foodSizeController.update(req, res));
 
 app.post("/api/taste/create", (req, res) => tasteController.create(req, res));
+app.get("/api/taste/list", (req, res) => tasteController.list(req, res));

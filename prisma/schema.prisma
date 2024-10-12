@@ -47,5 +47,5 @@ model Taste {
   remark String
   status String @default("use")
   foodTypeId Int
-  foodType FoodType @relation(fields: [foodTypeId], references: [id])
+  FoodType FoodType @relation(fields: [foodTypeId], references: [id])
 }
