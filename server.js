@@ -9,6 +9,7 @@ const foodTypeController = require("./controllers/FoodTypeController");
 const foodSizeController = require("./controllers/FoodSizeController");
 const tasteController = require("./controllers/TasteController");
 const foodController = require("./controllers/FoodController");
+const saleTempController = require("./controllers/SaleTempController");
 
 app.use(cors());
 app.use(fileUpload());
@@ -43,3 +44,9 @@ app.get("/api/food/list", (req, res) => foodController.list(req, res));
 app.delete("/api/food/remove/:id", (req, res) => foodController.remove(req, res));
 app.put("/api/food/update", (req, res) => foodController.update(req, res));
 app.get("/api/food/filter/:foodType", (req, res) => foodController.filter(req, res));
+
+app.post("/api/saleTemp/create", (req, res) => saleTempController.create(req, res));
+app.get("/api/saleTemp/list/:userId", (req, res) => saleTempController.list(req, res));
+app.delete("/api/saleTemp/clear/:userId", (req, res) => saleTempController.clear(req, res));
+app.delete("/api/saleTemp/remove/:foodId/:userId", (req, res) => saleTempController.remove(req, res));
+app.put("/api/saleTemp/changeQty", (req, res) => saleTempController.changeQty(req, res));
